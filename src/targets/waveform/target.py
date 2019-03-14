@@ -37,13 +37,14 @@ class Crust2StoreIDSelector(StoreIDSelector):
 
 
 class StationDictStoreIDSelector(StoreIDSelector):
-    dict_st_gfid = Dict.T(help='Dictionary with station-gfdb pairs')
+    mapping = Dict.T(help='Dictionary with station-gfdb pairs,\
+                           keys are NETWORK.STATION')
 
     def get_store_id(self, event, st, cha):
         try:
-            store_id = self.dict_st_gfid['%s.%s' % (st.network, st.station)]
+            store_id = self.mapping['%s.%s' % (st.network, st.station)]
         except KeyError:
-            store_id = self.dict_st_gfid['others']
+            store_id = self.mapping['others']
 
         return store_id
 
