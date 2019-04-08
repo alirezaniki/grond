@@ -6,6 +6,7 @@
 * Henriette Sudhaus
 * Andreas Steinberg
 * Hannes Vasyura-Bathke
+* Gesa Petersen
 * Simon Daout
 * Simone Cesca
 * Torsten Dahm
